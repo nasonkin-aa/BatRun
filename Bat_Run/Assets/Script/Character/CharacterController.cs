@@ -9,7 +9,5 @@ public class CharacterController : MonoBehaviour
     {
         Vector2 _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(_mousePos.x, _mousePos.y);
-        Debug.Log("sad");
-
     }
 }
