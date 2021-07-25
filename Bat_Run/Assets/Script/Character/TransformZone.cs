@@ -30,6 +30,9 @@ public class TransformZone : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        moveAll.CounterBat--;
+        if (collision.gameObject.tag == "Bat")
+        {
+            moveAll.CounterBat--;
+        }
     }
 }
