@@ -14,14 +14,16 @@ public class TransformZone : MonoBehaviour
         {
             Destroy(collision.gameObject);
             _spawnCounter++;
-            Debug.Log(_spawnCounter);
+            //Debug.Log(_spawnCounter);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.tag == "Bat")
         {
             moveAll.CounterBat++;
+            Debug.Log(moveAll.CounterBat);
             if(moveAll.CounterBat >= 3)
             {
                 _triggerStayStart = true;
@@ -33,6 +35,7 @@ public class TransformZone : MonoBehaviour
         if (collision.gameObject.tag == "Bat")
         {
             moveAll.CounterBat--;
+            Debug.Log(moveAll.CounterBat);
         }
     }
 }

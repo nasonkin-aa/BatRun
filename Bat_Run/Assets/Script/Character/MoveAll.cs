@@ -28,7 +28,7 @@ public class MoveAll : MonoBehaviour
         Quaternion quaternion = Quaternion.Euler(0, 0, 0);
 
         _objZoneTransform.SetActive(true);
-        _objZoneTransform.transform.position = Vector3.MoveTowards(_objZoneTransform.transform.position, _mousePos, Time.deltaTime * 5000 );
+        _objZoneTransform.transform.position = Vector3.MoveTowards(_objZoneTransform.transform.position, _mousePos, Time.deltaTime * 50000 );
         _prefabSmokeExplosion.transform.position = Vector3.MoveTowards(_prefabSmokeExplosion.transform.position, _mousePos, Time.deltaTime * 500);
         _prefabVampire.transform.position = Vector3.MoveTowards(_prefabVampire.transform.position, _mousePos, Time.deltaTime * 500);
 
@@ -48,20 +48,23 @@ public class MoveAll : MonoBehaviour
         _prefabSmokeExplosion.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         _prefabSmokeExplosion.SetActive(false);
-        _prefabVampire.SetActive(true);
+        if(transformZone._triggerStayStart == true)
+        {
+            _prefabVampire.SetActive(true);
+        }
     }
     private IEnumerator ChangeFormVampireBat() 
     {
         _prefabVampire.SetActive(false);
+
         if (transformZone._triggerStayStart == true)
-        { 
+        {
             _prefabSmokeExplosion.SetActive(true);
         }
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         _prefabVampire.SetActive(false);
         _prefabSmokeExplosion.SetActive(false);
         SpawnBat(transformZone._spawnCounter);
-        transformZone._spawnCounter = 0;
     }
     private void SpawnBat(int Counter )
     {
@@ -70,17 +73,22 @@ public class MoveAll : MonoBehaviour
         Quaternion quaternion = Quaternion.Euler(0, 0, 0);
         for (int i = 0; i < Counter; i++)
         {
-            Instantiate(_prefabBat, _prefabSmokeExplosion.transform.position, quaternion);
+            Instantiate(_prefabBat, 
+                new Vector3(Random.Range(_prefabSmokeExplosion.transform.position.x - 2, _prefabSmokeExplosion.transform.position.x + 2) ,
+                Random.Range(_prefabSmokeExplosion.transform.position.y - 0.5f, _prefabSmokeExplosion.transform.position.y + 0.5f))  
+                , quaternion);
         }
+        transformZone._spawnCounter = 0;
     }
     private void OnMouseUp()
     {
+        //Debug.Log(CounterBat);
         StartCoroutine(ChangeFormVampireBat());
-        CounterBat = 0;
         _objZoneTransform.SetActive(false);
         transformZone._triggerStayStart = false;
         _oneCall = true;
         //_prefabSmokeExplosion.SetActive(false);
+        CounterBat = 0;
     }
 
 }
