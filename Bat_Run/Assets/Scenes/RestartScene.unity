@@ -600,6 +600,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 198772945}
+        m_TargetAssemblyTypeName: AudioSwitcher, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &698392711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +913,6 @@ GameObject:
   - component: {fileID: 951773608}
   - component: {fileID: 951773607}
   - component: {fileID: 951773606}
-  - component: {fileID: 951773605}
   m_Layer: 5
   m_Name: GoToMenuButton
   m_TagString: Buttom
@@ -928,21 +939,6 @@ RectTransform:
   m_AnchoredPosition: {x: 53, y: 52.900024}
   m_SizeDelta: {x: 24.9473, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &951773605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951773602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!114 &951773606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,6 +993,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: StartScene
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 198772945}
+        m_TargetAssemblyTypeName: AudioSwitcher, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &951773607
@@ -1208,7 +1216,6 @@ GameObject:
   - component: {fileID: 1802739573}
   - component: {fileID: 1802739572}
   - component: {fileID: 1802739571}
-  - component: {fileID: 1802739575}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Buttom
@@ -1291,6 +1298,18 @@ MonoBehaviour:
           m_StringArgument: Game
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 198772945}
+        m_TargetAssemblyTypeName: AudioSwitcher, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1802739572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,21 +1348,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802739569}
   m_CullTransparentMesh: 1
---- !u!114 &1802739575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802739569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!1 &2087254669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1389,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 86c0b0ab1466bb3499a30f4e263177df, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b82139a7f3ca346429f0405ac68212fa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

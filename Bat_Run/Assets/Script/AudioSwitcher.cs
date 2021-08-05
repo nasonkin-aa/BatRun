@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioSwitcher : MonoBehaviour
 {
+    //List<GameObject> buttons = new List<GameObject>();
     void Start()
     {
         DataStorageManager dataStorageManager = GameObject.Find("DataStorage").GetComponent<DataStorageManager>();
@@ -16,6 +17,11 @@ public class AudioSwitcher : MonoBehaviour
         {
             audioListener.enabled = true;
         }
+        //GameObject[] buttonsArray = GameObject.FindGameObjectsWithTag("buttom");
+        //foreach (GameObject button in buttonsArray)
+        //{
+        //    buttons.Add(button);
+        //}
     }
 
     public void SwitchAudio()
@@ -32,8 +38,13 @@ public class AudioSwitcher : MonoBehaviour
             audioListener.enabled = true;
         }
     }
+    public void ButtonSound()
+    {
+        GameObject.Find("ButtonSound").GetComponent<AudioSource>().Play(0);
+    }
     void Update()
     {
-        
+       
     }
+
 }
