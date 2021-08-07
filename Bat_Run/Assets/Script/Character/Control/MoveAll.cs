@@ -82,12 +82,10 @@ public class MoveAll : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        //Debug.Log(CounterBat);
         StartCoroutine(ChangeFormVampireBat());
         _objZoneTransform.SetActive(false);
         transformZone._triggerStayStart = false;
         _oneCall = true;
-        //_prefabSmokeExplosion.SetActive(false);
         CounterBat = 0;
     }
 
