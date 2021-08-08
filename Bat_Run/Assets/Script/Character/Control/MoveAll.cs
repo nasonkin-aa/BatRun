@@ -16,7 +16,7 @@ public class MoveAll : MonoBehaviour
     [SerializeField]
     private GameObject _objZoneTransform;
     [SerializeField]
-    private TransformZone transformZone;
+    public TransformZone transformZone;
     [SerializeField]
     private GameObject _prefabVampire;
 

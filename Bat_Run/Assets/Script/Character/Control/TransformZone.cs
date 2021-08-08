@@ -13,6 +13,7 @@ public class TransformZone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bat" && _triggerStayStart == true)
         {
+            Debug.Log(_spawnCounter);
             Destroy(collision.gameObject);
             _spawnCounter++;
         }

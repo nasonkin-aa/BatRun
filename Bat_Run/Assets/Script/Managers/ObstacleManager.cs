@@ -6,12 +6,11 @@ public class ObstacleManager : MonoBehaviour
     public GameObject wallPref;
     public Collider2D[] colliders;
     public float radius = 3f;
-
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("ObstacleSpawn",1f,1f);
-    }
+    } 
 
     void ObstacleSpawn()
     {
@@ -21,9 +20,5 @@ public class ObstacleManager : MonoBehaviour
 
         if (colliders.Length <= 0)
             Instantiate(wallPref, spawnPosition, Quaternion.identity);
-    }
-    private void Update()
-    {
-
     }
 }

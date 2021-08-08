@@ -8,7 +8,8 @@ public class AntiBat : Obstacle
     {
         if (collision.CompareTag("Bat"))
         {
-            Debug.Log("Yes");
+            Destroy(collision.gameObject);
+            _moveAll.CounterBat--;
         }
     }
 }
