@@ -6,9 +6,19 @@ public class Almighty : Obstacle
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bat") || collision.CompareTag("Vampire"))
+        if (collision.CompareTag("Vampire"))
         {
-            Debug.Log("Yes");
+            collision.gameObject.SetActive(false);
+            _moveAll.VampireDeath = true;
+            _moveAll.transformZone._spawnCounter = 0;
         }
+        if (collision.CompareTag("Bat"))
+        {
+            Destroy(collision.gameObject);
+            _moveAll.CounterBat--;
+            _moveAll.CounterBat = 0;
+        }
+
     }
+
 }

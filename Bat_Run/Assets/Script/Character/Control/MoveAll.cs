@@ -6,9 +6,10 @@ public class MoveAll : MonoBehaviour
 {
     public int CounterBat;
     public GameObject[] _bat;
+    public bool VampireDeath = false;
+
     private float _speedBat = 5f;
     private bool _oneCall = true;
-
     [SerializeField]
     private GameObject _prefabSmokeExplosion;
     [SerializeField]
@@ -32,9 +33,10 @@ public class MoveAll : MonoBehaviour
         _prefabSmokeExplosion.transform.position = Vector3.MoveTowards(_prefabSmokeExplosion.transform.position, _mousePos, Time.deltaTime * 500);
         _prefabVampire.transform.position = Vector3.MoveTowards(_prefabVampire.transform.position, _mousePos, Time.deltaTime * 500);
 
-        for (int i = 0; i < _bat.Length; i++)
+        if (!VampireDeath)
         {
-            _bat[i].transform.position = Vector3.MoveTowards(_bat[i].transform.position, _mousePos, Time.deltaTime * _speedBat);
+            foreach (var bat in _bat)
+                bat.transform.position = Vector3.MoveTowards(bat.transform.position, _mousePos, Time.deltaTime * _speedBat);
         }
 
         if (transformZone._triggerStayStart == true && _oneCall == true)
@@ -57,7 +59,7 @@ public class MoveAll : MonoBehaviour
     {
         _prefabVampire.SetActive(false);
 
-        if (transformZone._triggerStayStart == true)
+        if (transformZone._triggerStayStart == true && !VampireDeath )
         {
             _prefabSmokeExplosion.SetActive(true);
         }
@@ -83,10 +85,20 @@ public class MoveAll : MonoBehaviour
     private void OnMouseUp()
     {
         StartCoroutine(ChangeFormVampireBat());
+        VampireDeath = false;
         _objZoneTransform.SetActive(false);
         transformZone._triggerStayStart = false;
         _oneCall = true;
         CounterBat = 0;
+    }
+
+    private void FixedUpdate()
+    {
+        if(_bat.Length == 0 && VampireDeath)
+        {
+            Debug.Log("gg");
+        }
+
     }
 
 }

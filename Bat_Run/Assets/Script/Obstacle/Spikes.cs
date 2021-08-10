@@ -9,6 +9,7 @@ public class Spikes : Obstacle
         if (collision.CompareTag("Vampire"))
         {
             collision.gameObject.SetActive(false);
+            _moveAll.VampireDeath = true;
             _moveAll.transformZone._spawnCounter = 0;
         }
         
