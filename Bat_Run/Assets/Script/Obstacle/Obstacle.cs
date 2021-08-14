@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField]
-    protected MoveAll _moveAll;
+    public SpeedManager speedManager;
     public float speed;
+
+    private void Awake()
+    {
+        speedManager = GameObject.FindObjectOfType<SpeedManager>();
+        speed = speedManager.gameSpeed;
+    }
 
     void Update()
     {
