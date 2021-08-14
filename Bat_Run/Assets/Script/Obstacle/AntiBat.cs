@@ -10,6 +10,7 @@ public class AntiBat : Obstacle
         {
             Destroy(collision.gameObject);
             _moveAll.CounterBat--;
+            _moveAll.ScoreBat--;
             _moveAll.CounterBat = 0;// ???
         }
     }

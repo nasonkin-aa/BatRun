@@ -10,6 +10,7 @@ public class Spikes : Obstacle
         {
             collision.gameObject.SetActive(false);
             _moveAll.VampireDeath = true;
+            _moveAll.ScoreBat = _moveAll.ScoreBat - _moveAll.transformZone._spawnCounter;
             _moveAll.transformZone._spawnCounter = 0;
         }
         

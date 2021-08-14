@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MoveAll : MonoBehaviour
 {
+    public int ScoreBat = 3;
     public int CounterBat;
+
     public GameObject[] _bat;
     public bool VampireDeath = false;
 
@@ -20,6 +22,8 @@ public class MoveAll : MonoBehaviour
     public TransformZone transformZone;
     [SerializeField]
     private GameObject _prefabVampire;
+    [SerializeField]
+    private SceneChanger _sceneChanger;
 
     private void OnMouseDrag()
     {
@@ -94,9 +98,10 @@ public class MoveAll : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_bat.Length == 0 && VampireDeath)
+        if((ScoreBat == 0 && VampireDeath) || (ScoreBat == 0))
         {
             Debug.Log("gg");
+            _sceneChanger.ChangeScene("RestartScene");
         }
 
     }
