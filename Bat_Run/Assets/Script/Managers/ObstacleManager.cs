@@ -5,7 +5,7 @@ using System.Linq;
 public class ObstacleManager : MonoBehaviour
 {
     public GameObject wallPref;
-    public GameObject piecePref;
+    public GameObject[] piecePref;
     public GameObject bonusPref;
     public Collider2D[] colliders;
     public float spawnPeriod = 3f;
@@ -44,7 +44,7 @@ public class ObstacleManager : MonoBehaviour
         else
         {
             spawnPosition = new Vector2(0, 6f);
-            Instantiate(piecePref, spawnPosition, Quaternion.identity);
+            Instantiate(piecePref[Random.Range(0, piecePref.Length - 1)], spawnPosition, Quaternion.identity);
             spawnCounter = 0;
         }
     }

@@ -1508,7 +1508,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallPref: {fileID: 6878689607868359348, guid: 94f7aad0a4e740d4ebe1186f9b436ec5, type: 3}
-  piecePref: {fileID: 4552281011804551708, guid: 723406aefdbdc424c84422681b268778, type: 3}
+  piecePref:
+  - {fileID: 4552281011804551708, guid: 723406aefdbdc424c84422681b268778, type: 3}
+  - {fileID: 4040872092592453412, guid: 638515694a753294a9aba619579c0e1b, type: 3}
+  - {fileID: 1996095947655080893, guid: 6c15772b99815154f9126f6525c77ffe, type: 3}
+  - {fileID: 6056957581402696265, guid: e3803b6899f1df244bc3ec807fe5a219, type: 3}
   bonusPref: {fileID: 981039034999057553, guid: f2e15ddee3fccb640a1fd72b1fbf8665, type: 3}
   colliders: []
   spawnPeriod: 3
