@@ -7,6 +7,8 @@ public class Obstacle : MonoBehaviour
     public SpeedManager speedManager;
     public float speed;
 
+    protected MoveAll _moveAll;
+
     private void Awake()
     {
         speedManager = GameObject.FindObjectOfType<SpeedManager>();
