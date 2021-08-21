@@ -20,13 +20,12 @@ public class TransformZone : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.tag == "Bat")
         {
             moveAll.CounterBat++;
             if(moveAll.CounterBat >= 3)
             {
-                _triggerStayStart = true;
+                StartCoroutine(WaitBeforeTransform());
             }
         }
     }
@@ -36,5 +35,12 @@ public class TransformZone : MonoBehaviour
         {
             moveAll.CounterBat--;
         }
+    }
+
+    private IEnumerator WaitBeforeTransform()
+    {
+        yield return new WaitForSeconds(0.2f);// test 
+                _triggerStayStart = true;
+       
     }
 }
