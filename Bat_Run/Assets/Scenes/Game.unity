@@ -201,7 +201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &36538243
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1507,7 +1507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b387ff935705044983fad608712c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallPref: {fileID: 6878689607868359348, guid: 94f7aad0a4e740d4ebe1186f9b436ec5, type: 3}
+  obstPrefList:
+  - {fileID: 6878689607868359348, guid: 94f7aad0a4e740d4ebe1186f9b436ec5, type: 3}
+  - {fileID: 7130551072553816907, guid: 6900aa6e3e5015a49a04a6ac3fc3c647, type: 3}
+  - {fileID: 8122303118814731208, guid: 2fff3e610f584b647bd9b42d8afcc57e, type: 3}
+  - {fileID: 3198757059094037060, guid: 8abd842e7e384ad41a3bf105c3f875ca, type: 3}
   piecePref:
   - {fileID: 4552281011804551708, guid: 723406aefdbdc424c84422681b268778, type: 3}
   - {fileID: 4040872092592453412, guid: 638515694a753294a9aba619579c0e1b, type: 3}

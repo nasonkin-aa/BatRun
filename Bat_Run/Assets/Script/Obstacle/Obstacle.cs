@@ -9,9 +9,11 @@ public class Obstacle : MonoBehaviour
 
     protected MoveAll _moveAll;
 
-    private void Awake()
+    protected void Awake()
     {
+        _moveAll = GameObject.FindObjectOfType<MoveAll>();
         speedManager = GameObject.FindObjectOfType<SpeedManager>();
+        //Debug.Log(speedManager.gameSpeed);
         speed = speedManager.gameSpeed;
     }
 
@@ -26,9 +28,5 @@ public class Obstacle : MonoBehaviour
     protected void Move()
     {
         transform.position -= new Vector3(0, speed * Time.deltaTime);
-    }
-    protected void Start()
-    {
-        _moveAll = GameObject.FindObjectOfType<MoveAll>();
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 public class ObstacleManager : MonoBehaviour
 {
-    public GameObject wallPref;
+    public GameObject[] obstPrefList;
     public GameObject[] piecePref;
     public GameObject bonusPref;
     public Collider2D[] colliders;
@@ -37,14 +37,14 @@ public class ObstacleManager : MonoBehaviour
 
         if (spawnCounter < 6)
         {
-            Instantiate(wallPref, spawnPosition, Quaternion.identity);
+            Instantiate(obstPrefList[Random.Range(0, obstPrefList.Length)], spawnPosition, Quaternion.identity);
             if (spawnCounter == 4) Invoke("BonusSpawn", 0f);
             spawnCounter += 1;
         }
         else
         {
             spawnPosition = new Vector2(0, 6f);
-            Instantiate(piecePref[Random.Range(0, piecePref.Length - 1)], spawnPosition, Quaternion.identity);
+            Instantiate(piecePref[Random.Range(0, piecePref.Length)], spawnPosition, Quaternion.identity);
             spawnCounter = 0;
         }
     }
@@ -75,7 +75,7 @@ public class ObstacleManager : MonoBehaviour
 
     void InvokeSetup()
     {
-        Debug.Log(spawnPeriod * (1f - (gameSpeed - 1)));
+        //Debug.Log(spawnPeriod * (1f - (gameSpeed - 1)));
         InvokeRepeating("ObstacleSpawn", 2f, spawnPeriod * (1f - (gameSpeed - 1)));
         Invoke("GameSpeedChange", spawnPeriod * 5);
     }
