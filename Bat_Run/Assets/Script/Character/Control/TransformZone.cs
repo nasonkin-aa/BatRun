@@ -13,7 +13,7 @@ public class TransformZone : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bat" && _triggerStayStart == true)
         {
-            Debug.Log(_spawnCounter);
+            //Debug.Log(_spawnCounter);
             Destroy(collision.gameObject);
             _spawnCounter++;
         }
@@ -39,8 +39,8 @@ public class TransformZone : MonoBehaviour
 
     private IEnumerator WaitBeforeTransform()
     {
-        yield return new WaitForSeconds(0.2f);// test 
-                _triggerStayStart = true;
+        yield return new WaitForSeconds(0.2f);// pause before transform
+        _triggerStayStart = true;
        
     }
 }

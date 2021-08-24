@@ -6,7 +6,6 @@ public class MoveAll : MonoBehaviour
 {
     public int ScoreBat = 3;
     public int CounterBat;
-
     public GameObject[] _bat;
     public bool VampireDeath = false;
 
@@ -24,6 +23,9 @@ public class MoveAll : MonoBehaviour
     private GameObject _prefabVampire;
     [SerializeField]
     private SceneChanger _sceneChanger;
+    [SerializeField]
+    private GameObject _vampireForm1;
+
 
     private void OnMouseDrag()
     {
@@ -43,22 +45,48 @@ public class MoveAll : MonoBehaviour
                 bat.transform.position = Vector3.MoveTowards(bat.transform.position, _mousePos, Time.deltaTime * _speedBat);
         }
 
+            CheckBat();
         if (transformZone._triggerStayStart == true && _oneCall == true)
         {
-            StartCoroutine(ChangeFormBatVampire());
+            //StartCoroutine(ChangeFormBatVampire());
             _oneCall = false;
         }     
     }
-    private IEnumerator ChangeFormBatVampire()
+
+    private void CheckBat()
     {
-        _prefabSmokeExplosion.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
-        _prefabSmokeExplosion.SetActive(false);
-        if(transformZone._triggerStayStart == true)
+        if (transformZone._spawnCounter != ScoreBat && transformZone._triggerStayStart)
+        {
+            _prefabSmokeExplosion.SetActive(true);
+        }
+        else if(transformZone._spawnCounter == ScoreBat && transformZone._triggerStayStart)
         {
             _prefabVampire.SetActive(true);
+            _prefabSmokeExplosion.SetActive(false);
         }
+
+        //while (transformZone._spawnCounter != 3)
+        //{
+
+            //    _prefabSmokeExplosion.SetActive(true);
+            //    //if (transformZone._triggerStayStart == true)
+            //    //{
+            //    //    _prefabVampire.SetActive(true);
+            //    //}
+
+            //}
+            
     }
+    //private IEnumerator ChangeFormBatVampire()
+    //{
+    //    _prefabSmokeExplosion.SetActive(true);
+    //    yield return new WaitForSeconds(0.2f);
+    //    _prefabSmokeExplosion.SetActive(false);
+    //    if(transformZone._triggerStayStart == true)
+    //    {
+    //        _prefabVampire.SetActive(true);
+    //    }
+    //}
     private IEnumerator ChangeFormVampireBat() 
     {
         _prefabVampire.SetActive(false);
@@ -104,6 +132,14 @@ public class MoveAll : MonoBehaviour
             _sceneChanger.ChangeScene("RestartScene");
         }
 
+        //if((ScoreBat >= 3))// Change vampire skin 
+        //{
+        //    _prefabVampire = _vampireForm1;
+        //}
+        //else if (ScoreBat >= 5)
+        //{
+        //    _prefabVampire = _vampireForm1;
+        //}
     }
 
 }
