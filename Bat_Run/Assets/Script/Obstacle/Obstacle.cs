@@ -13,6 +13,7 @@ public class Obstacle : MonoBehaviour
     {
         _moveAll = GameObject.FindObjectOfType<MoveAll>();
         speedManager = GameObject.FindObjectOfType<SpeedManager>();
+        //Debug.Log(speedManager.gameSpeed);
         speed = speedManager.gameSpeed;
     }
 

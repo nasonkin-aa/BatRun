@@ -75,7 +75,7 @@ public class ObstacleManager : MonoBehaviour
 
     void InvokeSetup()
     {
-        Debug.Log(spawnPeriod * (1f - (gameSpeed - 1)));
+        //Debug.Log(spawnPeriod * (1f - (gameSpeed - 1)));
         InvokeRepeating("ObstacleSpawn", 2f, spawnPeriod * (1f - (gameSpeed - 1)));
         Invoke("GameSpeedChange", spawnPeriod * 5);
     }
