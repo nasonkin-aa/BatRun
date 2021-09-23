@@ -67,6 +67,12 @@ public class ObstacleManager : MonoBehaviour
     {
         speedManager.gameSpeed += 0.05f;
         gameSpeed = speedManager.gameSpeed;
+
+        foreach (Obstacle item in FindObjectsOfType<Obstacle>())
+        {
+            item.speed = gameSpeed;
+        }
+
         radius = 1f - (gameSpeed - 1);
         CancelInvoke("ObstacleSpawn");
         CancelInvoke("GameSpeedChange");
