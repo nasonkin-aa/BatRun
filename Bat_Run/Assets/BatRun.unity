@@ -152,9 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b387ff935705044983fad608712c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallPref: {fileID: 6878689607868359348, guid: 94f7aad0a4e740d4ebe1186f9b436ec5, type: 3}
+  obstPrefList: []
+  piecePref: []
+  bonusPref: {fileID: 0}
   colliders: []
-  radius: 3
+  spawnPeriod: 3
+  speedManager: {fileID: 0}
 --- !u!4 &2111752427
 Transform:
   m_ObjectHideFlags: 0
@@ -180,6 +183,7 @@ GameObject:
   - component: {fileID: 2128388507}
   - component: {fileID: 2128388506}
   - component: {fileID: 2128388505}
+  - component: {fileID: 2128388508}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -252,6 +256,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128388508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128388504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f37d7130f174254e8493297b7784721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultResolution: {x: 720, y: 1280}
+  WidthOrHeight: 0
 --- !u!1001 &5635246964272549251
 PrefabInstance:
   m_ObjectHideFlags: 0
