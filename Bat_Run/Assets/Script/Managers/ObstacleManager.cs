@@ -37,7 +37,15 @@ public class ObstacleManager : MonoBehaviour
 
         if (spawnCounter < 6)
         {
-            Instantiate(obstPrefList[Random.Range(0, obstPrefList.Length)], spawnPosition, Quaternion.identity);
+            //Instantiate(obstPrefList[Random.Range(0, obstPrefList.Length)], spawnPosition, Quaternion.identity);
+            if (!colliders.Any(n => n.gameObject.tag == "Obstacle"))
+            {
+                Instantiate(obstPrefList[Random.Range(0, obstPrefList.Length)], spawnPosition, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(obstPrefList[Random.Range(0, obstPrefList.Length)], new Vector2(-spawnPosition.x, spawnPosition.y + 0.75f), Quaternion.identity);
+            }
             if (spawnCounter == 4) Invoke("BonusSpawn", 0f);
             spawnCounter += 1;
         }
@@ -53,6 +61,8 @@ public class ObstacleManager : MonoBehaviour
     {
         Vector2 spawnPosition = new Vector2(Random.Range(-3f, 3f), 6f);
 
+        colliders = Physics2D.OverlapCircleAll(spawnPosition, radius);
+
         if (!colliders.Any(n => n.gameObject.tag == "Obstacle"))
         {
             Instantiate(bonusPref, spawnPosition, Quaternion.identity);
@@ -65,7 +75,7 @@ public class ObstacleManager : MonoBehaviour
 
     void GameSpeedChange()
     {
-        speedManager.gameSpeed += 0.05f;
+        speedManager.gameSpeed += 0.050f;
         gameSpeed = speedManager.gameSpeed;
 
         foreach (Obstacle item in FindObjectsOfType<Obstacle>())
@@ -73,7 +83,7 @@ public class ObstacleManager : MonoBehaviour
             item.speed = gameSpeed;
         }
 
-        radius = 1f - (gameSpeed - 1);
+        //radius = 1f - (gameSpeed - 1);
         CancelInvoke("ObstacleSpawn");
         CancelInvoke("GameSpeedChange");
         InvokeSetup();
@@ -82,7 +92,7 @@ public class ObstacleManager : MonoBehaviour
     void InvokeSetup()
     {
         //Debug.Log(spawnPeriod * (1f - (gameSpeed - 1)));
-        InvokeRepeating("ObstacleSpawn", 2f, spawnPeriod * (1f - (gameSpeed - 1)));
+        InvokeRepeating("ObstacleSpawn", 2f, Mathf.Clamp( spawnPeriod * (1f - (gameSpeed - 1)), 1.0f, 3.0f ));
         Invoke("GameSpeedChange", spawnPeriod * 5);
     }
 
