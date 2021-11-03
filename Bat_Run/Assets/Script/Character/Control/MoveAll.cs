@@ -129,7 +129,7 @@ public class MoveAll : MonoBehaviour
         if((ScoreBat == 0 && VampireDeath) || (ScoreBat == 0))
         {
             Debug.Log("gg");
-            _sceneChanger.ChangeScene("RestartScene");
+            //_sceneChanger.ChangeScene("RestartScene");
         }
 
         //if((ScoreBat >= 3))// Change vampire skin 
