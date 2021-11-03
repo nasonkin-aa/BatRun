@@ -1630,14 +1630,21 @@ MonoBehaviour:
   - {fileID: 7130551072553816907, guid: 6900aa6e3e5015a49a04a6ac3fc3c647, type: 3}
   - {fileID: 8122303118814731208, guid: 2fff3e610f584b647bd9b42d8afcc57e, type: 3}
   - {fileID: 3198757059094037060, guid: 8abd842e7e384ad41a3bf105c3f875ca, type: 3}
+  - {fileID: 7365665321201407321, guid: 5157f615ed35daa48b130cb379052397, type: 3}
   piecePref:
   - {fileID: 4552281011804551708, guid: 723406aefdbdc424c84422681b268778, type: 3}
   - {fileID: 4040872092592453412, guid: 638515694a753294a9aba619579c0e1b, type: 3}
   - {fileID: 1996095947655080893, guid: 6c15772b99815154f9126f6525c77ffe, type: 3}
   - {fileID: 6056957581402696265, guid: e3803b6899f1df244bc3ec807fe5a219, type: 3}
+  - {fileID: 8960795967988227885, guid: 10d7a6edade0f214abb55496fb7785db, type: 3}
+  - {fileID: 6466729081880123323, guid: 1167cd65555332a4997192e92b98e22d, type: 3}
+  - {fileID: 5220140176821069046, guid: 9fd58efdbc5cccc4ba76d1cf3e715ff8, type: 3}
+  - {fileID: 4041341275219963800, guid: 0e8176c6e41a567479fd24460970c315, type: 3}
+  - {fileID: 4626230642862906246, guid: bac046fd9e171f84eaa4bf1e6d9111be, type: 3}
+  - {fileID: 4552281011804551708, guid: 18506fc4936c9d245ba7230f8b6b58f0, type: 3}
   bonusPref: {fileID: 981039034999057553, guid: f2e15ddee3fccb640a1fd72b1fbf8665, type: 3}
   colliders: []
-  spawnPeriod: 3
+  spawnPeriod: 1
   speedManager: {fileID: 0}
 --- !u!4 &1907805886
 Transform:
