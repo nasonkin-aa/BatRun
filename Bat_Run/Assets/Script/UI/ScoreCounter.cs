@@ -28,6 +28,5 @@ public class ScoreCounter : MonoBehaviour
     }
     void ScoreInit()
     {
-        text.text = string.Format(textFormat, scoreManager.totalScore);
     }
 }
