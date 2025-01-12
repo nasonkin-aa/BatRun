@@ -33,7 +33,7 @@ public class MoveAll : MonoBehaviour
         Vector3 _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _mousePos.z = transform.position.z;
         Quaternion quaternion = Quaternion.Euler(0, 0, 0);
-
+        
         _objZoneTransform.SetActive(true);
         _objZoneTransform.transform.position = Vector3.MoveTowards(_objZoneTransform.transform.position, _mousePos, Time.deltaTime * 50000 );
         _prefabSmokeExplosion.transform.position = Vector3.MoveTowards(_prefabSmokeExplosion.transform.position, _mousePos, Time.deltaTime * 500);
